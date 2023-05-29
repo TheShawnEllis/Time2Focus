@@ -3,7 +3,7 @@
 @import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
 html, body {
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 0px;
     margin: 0px;
 }
@@ -16,16 +16,12 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 14px;    
-    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* padding: 56px 48px; */
     gap: 18px;
     position: relative;
-    /* width: 1278.53px;
-    height: 952.68px; */
-    background: #0E0E10;
+    background: #1e1e1e;
 }
 
 .header {
@@ -130,6 +126,39 @@ body {
     /* height: 6px; */
     /* background: #005DA3; */
     opacity: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.clock-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.clock-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px; 
+    gap: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.clock-digit {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
     flex: none;
     order: 0;
     flex-grow: 0;
