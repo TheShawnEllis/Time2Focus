@@ -14,184 +14,226 @@
         <span class="titleText">Time2Focus</span>
     </header>
     <div class="content" id="content">
-        <div class="controls" id="timeInput">
+        <div class="controls clock-input" id="timeInput">
             <label for="timeInput" id="timeInputLabel" class="input-label">How long do you want to focus?</label>
-            <!-- 
-                <input type="time" name="Set Time" id="timeInput" class="input" value="30:00:00" max="12:00" min="00:00" step=""> 
-            -->
-            <input type="text" name="Set hours" id="timeInputHours" class="input-time" maxlength="2" placeholder="00" size="2" pattern="[0-9]{0-2}"  required>
-        </div>
-        <div class="controls" id="clockControls">
-            <i class="fi fi-br-refresh"></i>
-            <i class="fi fi-sr-play-pause"></i>
-            <i class="fi fi-sr-pause"></i>
-            <i class="fi fi-sr-play"></i>
-            <i class="fi fi-ss-bell"></i>
-            <i class="fi fi-ss-bell-slash"></i>
-        </div>
-        <div class="progress-wrapper" id="progressWrapper">
-            <div class="progress-bar" id="progressBar">
-                <div class="progress-completed" id="prgressCompleted"></div>
+            <div style="
+            height: fit-content;
+            display: inline-flex;
+            gap: 8px;
+            margin: 18px 0px;
+            align-items: center;">
+                <input type="text" name="Set hours" id="timeInputHours" class="input-time" maxlength="2"
+                    placeholder="00" size="2" pattern="[0-9]{0-2}" required>
+                <span class="input-text">:</span>
+                <input type="text" name="Set hours" id="timeInputHours" class="input-time" maxlength="2"
+                    placeholder="00" size="2" pattern="[0-9]{0-2}" required>
+                <span class="input-text">:</span>
+                <input type="text" name="Set hours" id="timeInputHours" class="input-time" maxlength="2"
+                    placeholder="00" size="2" pattern="[0-9]{0-2}" required>
             </div>
         </div>
-        <div class="clock-wrapper" id="clock">
-            <div class="clock-section" id="hours">
-                <div class="clock-digit">
-                    <svg id="hoursLeft" width="113" height="203" viewBox="0 0 113 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="hl_segment_B"
-                            d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hl_segment_A"
-                            d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hl_segment_D"
-                            d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hl_segment_C"
-                            d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hl_segment_F"
-                            d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hl_segment_E"
-                            d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
-                            fill="white" fill-opacity="0.05" />
-                        <path id="hl_segment_G"
-                            d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
-                            fill="white" fill-opacity="0.9" />
+        <div class="content">
+            <div class="clock-wrapper" id="clock">
+                <div class="clock-section" id="hours">
+                    <div class="clock-digit">
+                        <svg id="hoursLeft" width="113" height="203" viewBox="0 0 113 203" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="hl_segment_B"
+                                d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hl_segment_A"
+                                d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hl_segment_D"
+                                d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hl_segment_C"
+                                d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hl_segment_F"
+                                d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hl_segment_E"
+                                d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
+                                fill="white" fill-opacity="0.05" />
+                            <path id="hl_segment_G"
+                                d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
+                                fill="white" fill-opacity="0.9" />
+                        </svg>
+                    </div>
+                    <div class="clock-digit">
+                        <svg id="hoursRight" width="113" height="203" viewBox="0 0 113 203" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="hr_segment_B"
+                                d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hr_segment_A"
+                                d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hr_segment_D"
+                                d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hr_segment_C"
+                                d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hr_segment_F"
+                                d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="hr_segment_E"
+                                d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
+                                fill="white" fill-opacity="0.05" />
+                            <path id="hr_segment_G"
+                                d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
+                                fill="white" fill-opacity="0.9" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="clock-section clock-seperator" id="segmentLeft">
+                    <svg width="40.687428" height="129.55992" viewBox="0 0 40.687428 129.55992" version="1.1" id="svg5"
+                        xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer5" transform="translate(-1777.3582,-572.23315)">
+                            <rect style="fill:#f9f9f9;fill-opacity:1" id="rect6708" width="28.75" height="28.75"
+                                x="1675.787" y="-866.5271" transform="rotate(45)" />
+                            <rect style="fill:#f9f9f9;fill-opacity:1" id="rect6708-4" width="28.75" height="28.75"
+                                x="1738.67" y="-803.68475" transform="rotate(45)" />
+                        </g>
                     </svg>
                 </div>
-                <div class="clock-digit">
-                    <svg id="hoursRight" width="113" height="203" viewBox="0 0 113 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="hr_segment_B"
-                            d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hr_segment_A"
-                            d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hr_segment_D"
-                            d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hr_segment_C"
-                            d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hr_segment_F"
-                            d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="hr_segment_E"
-                            d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
-                            fill="white" fill-opacity="0.05" />
-                        <path id="hr_segment_G"
-                            d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
-                            fill="white" fill-opacity="0.9" />
+                <div class="clock-section" id="minutes">
+                    <div class="clock-digit">
+                        <svg id="minutesLeft" width="113" height="203" viewBox="0 0 113 203" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="ml_segment_B"
+                                d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="ml_segment_A"
+                                d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="ml_segment_D"
+                                d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="ml_segment_C"
+                                d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="ml_segment_F"
+                                d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="ml_segment_E"
+                                d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
+                                fill="white" fill-opacity="0.05" />
+                            <path id="ml_segment_G"
+                                d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
+                                fill="white" fill-opacity="0.9" />
+                        </svg>
+                    </div>
+                    <div class="clock-digit">
+                        <svg id="minutesRight" width="113" height="203" viewBox="0 0 113 203" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="mr_segment_B"
+                                d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="mr_segment_A"
+                                d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="mr_segment_D"
+                                d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="mr_segment_C"
+                                d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="mr_segment_F"
+                                d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="mr_segment_E"
+                                d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
+                                fill="white" fill-opacity="0.05" />
+                            <path id="mr_segment_G"
+                                d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
+                                fill="white" fill-opacity="0.9" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="clock-section clock-seperator" id="segmentRight">
+                    <svg width="40.687428" height="129.55992" viewBox="0 0 40.687428 129.55992" version="1.1" id="svg5"
+                        xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer5" transform="translate(-1777.3582,-572.23315)">
+                            <rect style="fill:#f9f9f9;fill-opacity:1" id="rect6708" width="28.75" height="28.75"
+                                x="1675.787" y="-866.5271" transform="rotate(45)" />
+                            <rect style="fill:#f9f9f9;fill-opacity:1" id="rect6708-4" width="28.75" height="28.75"
+                                x="1738.67" y="-803.68475" transform="rotate(45)" />
+                        </g>
                     </svg>
+                </div>
+                <div class="clock-section" id="seconds">
+                    <div class="clock-digit">
+                        <svg id="secondsLeft" width="113" height="203" viewBox="0 0 113 203" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="sl_segment_B"
+                                d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sl_segment_A"
+                                d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sl_segment_D"
+                                d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sl_segment_C"
+                                d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sl_segment_F"
+                                d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sl_segment_E"
+                                d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
+                                fill="white" fill-opacity="0.05" />
+                            <path id="sl_segment_G"
+                                d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
+                                fill="white" fill-opacity="0.9" />
+                        </svg>
+                    </div>
+                    <div class="clock-digit">
+                        <svg id="secondsRight" width="113" height="203" viewBox="0 0 113 203" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="sr_segment_B"
+                                d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sr_segment_A"
+                                d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sr_segment_D"
+                                d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sr_segment_C"
+                                d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sr_segment_F"
+                                d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
+                                fill="white" fill-opacity="0.9" />
+                            <path id="sr_segment_E"
+                                d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
+                                fill="white" fill-opacity="0.05" />
+                            <path id="sr_segment_G"
+                                d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
+                                fill="white" fill-opacity="0.9" />
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div class="clock-section" id="minutes">
-                <div class="clock-digit">
-                    <svg id="minutesLeft" width="113" height="203" viewBox="0 0 113 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="ml_segment_B"
-                            d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="ml_segment_A"
-                            d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="ml_segment_D"
-                            d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="ml_segment_C"
-                            d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="ml_segment_F"
-                            d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="ml_segment_E"
-                            d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
-                            fill="white" fill-opacity="0.05" />
-                        <path id="ml_segment_G"
-                            d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
-                            fill="white" fill-opacity="0.9" />
-                    </svg>
-                </div>
-                <div class="clock-digit">
-                    <svg id="minutesRight" width="113" height="203" viewBox="0 0 113 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="mr_segment_B"
-                            d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="mr_segment_A"
-                            d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="mr_segment_D"
-                            d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="mr_segment_C"
-                            d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="mr_segment_F"
-                            d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="mr_segment_E"
-                            d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
-                            fill="white" fill-opacity="0.05" />
-                        <path id="mr_segment_G"
-                            d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
-                            fill="white" fill-opacity="0.9" />
-                    </svg>
+            <div class="progress-wrapper" id="progressWrapper">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-completed" id="prgressCompleted"></div>
                 </div>
             </div>
-            <div class="clock-section" id="seconds">
-                <div class="clock-digit">
-                    <svg id="secondsLeft" width="113" height="203" viewBox="0 0 113 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="sl_segment_B"
-                            d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sl_segment_A"
-                            d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sl_segment_D"
-                            d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sl_segment_C"
-                            d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sl_segment_F"
-                            d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sl_segment_E"
-                            d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
-                            fill="white" fill-opacity="0.05" />
-                        <path id="sl_segment_G"
-                            d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
-                            fill="white" fill-opacity="0.9" />
-                    </svg>
-                </div>
-                <div class="clock-digit">
-                    <svg id="secondsRight" width="113" height="203" viewBox="0 0 113 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="sr_segment_B"
-                            d="M103.339 12.9958L87.0744 30.0537V82.0206L103.339 98.6818L112.86 85.5909V26.8801L103.339 12.9958Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sr_segment_A"
-                            d="M13.3187 10.0206L30.3766 26.2851H82.3435L99.0046 10.0206L85.9138 0.5H27.203L13.3187 10.0206Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sr_segment_D"
-                            d="M13.1709 192.658L30.2288 176.394H82.1957L98.8569 192.658L85.7659 202.179H27.0552L13.1709 192.658Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sr_segment_C"
-                            d="M103.339 103.442L87.0744 120.5V172.467L103.339 189.128L112.86 176.037V117.326L103.339 103.442Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sr_segment_F"
-                            d="M9.52069 12.7975L25.7852 29.8553V81.8223L9.52069 98.4835L0 85.3925V26.6818L9.52069 12.7975Z"
-                            fill="white" fill-opacity="0.9" />
-                        <path id="sr_segment_E"
-                            d="M9.52069 103.244L25.7852 120.302V172.269L9.52069 188.93L0 175.839V117.128L9.52069 103.244Z"
-                            fill="white" fill-opacity="0.05" />
-                        <path id="sr_segment_G"
-                            d="M27.8474 89.0768L14.1026 101.139L27.7072 114.743H84.6497L98.0438 101.349L85.6314 88.9366L27.8474 89.0768Z"
-                            fill="white" fill-opacity="0.9" />
-                    </svg>
-                </div>
+            <div class="controls clock-buttons" id="clockControls">
+                <i class="fi fi-br-refresh"></i>
+                <i class="fi fi-sr-play-pause"></i>
+                <i class="fi fi-sr-pause"></i>
+                <i class="fi fi-sr-play"></i>
+                <i class="fi fi-ss-bell"></i>
+                <i class="fi fi-ss-bell-slash"></i>
             </div>
-
         </div>
     </div>
 </body>
