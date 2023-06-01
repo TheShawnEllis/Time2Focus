@@ -186,6 +186,10 @@ input:active {
   outline-offset: 0px;
 }
 
+input:invalid {
+  outline: #a50000 2px solid !important;
+}
+
 .input-label {
   font-size: 2rem;
 }
