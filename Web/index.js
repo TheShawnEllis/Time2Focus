@@ -13,17 +13,15 @@ var minutes;
 var seconds;
 var timeInputFields;
 
-var foo;
-
-$(document).ready(function() {
+$(document).ready(function () {
     timeInputFields = $(".input-time");
-    
-    timeInputFields.change(function(){
-        RefreshTimer(this);
+
+    timeInputFields.change(function () {
+        UpdateClock(this);
     });
 });
 
-function RefreshTimer(obj) {
+function UpdateClock(obj) {
     if (obj !== undefined) {
         var section;
         var leftDigit = obj.value[0];
@@ -55,11 +53,9 @@ function RefreshTimer(obj) {
 
 function GetSvgTemplate(num) {
     var template;
-    console.log("hit");
     switch (num) {
         case "0":
             template = NumberTemplate.Zero;
-            console.log(template);
             break;
         case "1":
             template = NumberTemplate.One;
@@ -164,7 +160,7 @@ class NumberTemplate {
             d="m -995.12077,625.66678 -13.74483,12.06172 13.60453,13.6045 h 56.9426 l 13.3941,-13.39412 -12.4124,-12.41235 z"
             id="path1749-7" /></g>
         </svg>`;
-    
+
     static Two = `<svg
         width="112.85956"
         height="201.67896"
